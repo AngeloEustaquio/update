@@ -1,11 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angelo's Daily Updates 💌</title>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #ffdde1, #ee9ca7);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column; /* NEW ENTRIES AT BOTTOM */
+}
+
+h1 {
+    text-align: center;
+    color: #ff4d6d;
+    margin-bottom: 25px;
+}
+
+/* Custom tag styling */
+update {
+    display: block;
+    background: #ffe6eb;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+
+update date {
+    display: block;
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 5px;
+}
+
+update p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Form styling */
+form {
+    background: #fff0f2;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    resize:none;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff4d6d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #ff1e4d;
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+    h1 { font-size: 22px; }
+    update p { font-size: 14px; }
+}
+</style>
 </head>
 <body>
+
+<div class="container">
+    <h1>My Daily Updates 💌</h1>
+
+    <update>
+        <date>Feb 26, 2026</date>
+        <p>Hello?</p>
+    </update>
     
+    <!-- Form for her reply -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <h2 style="color:#ff4d6d;margin-bottom:10px;"> Message 💌</h2>
+        <input type="text" name="name" placeholder="Your name" required>
+        <textarea name="message" rows="4" placeholder="Write your message here..." required></textarea>
+        <button type="submit">Send ❤️</button>
+    </form>
+</div>
+
 </body>
 </html>
