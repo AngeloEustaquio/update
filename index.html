@@ -1,186 +1,250 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Angelo's Daily Updates 💌</title>
-<link rel="icon" type="image/x-icon" href="android-chrome-192x192.png">
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angelo's Daily Updates 💌</title>
+    <link rel="icon" type="image/x-icon" href="android-chrome-192x192.png" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-image: url(BackgroundImage.jpeg.jpeg);
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background-position:center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-image: url(BackgroundImage.jpeg.jpeg);
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
 
-.container {
-    max-width: 800px;
-    width: 100%;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* NEW ENTRIES AT BOTTOM */
-    background: rgba(255, 255, 255, 0.2);
-    border: white solid 1px;
-}
-.textStorage {
-    height:680px;
-    overflow-y:auto;
-    width:clamp(420px,90vw, auto);
-    padding: 0px 10px 0px;
-}
-/* Scrollbar width */
-::-webkit-scrollbar {
-  width: 8px;
-}
+      .container {
+        max-width: 800px;
+        width: 100%;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; /* NEW ENTRIES AT BOTTOM */
+        background: rgba(255, 255, 255, 0.2);
+        border: white solid 1px;
+      }
+      .textStorage {
+        height: 680px;
+        overflow-y: auto;
+        width: clamp(420px, 90vw, auto);
+        padding: 0px 10px 0px;
+      }
+      /* Scrollbar width */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
 
-/* Scrollbar track (background) */
-::-webkit-scrollbar-track {
-  background: #ff4d6d;
-  border-radius: 10px;
-}
+      /* Scrollbar track (background) */
+      ::-webkit-scrollbar-track {
+        background: #ff4d6d;
+        border-radius: 10px;
+      }
 
+      ::-webkit-scrollbar-thumb {
+        background: #ffe6eb;
+        border-radius: 10px;
+      }
 
-::-webkit-scrollbar-thumb {
-  background: #ffe6eb;
-  border-radius: 10px;
-}
+      h1 {
+        text-align: center;
+        color: #ff4d6d;
+        margin-bottom: 25px;
+      }
 
+      /* Custom tag styling */
+      update {
+        display: block;
+        background: #ffe6eb;
+        padding: 15px;
+        border-radius: 10px;
+        margin: 20px 0px 20px;
+        word-wrap: break-word;
+      }
 
-h1 {
-    text-align: center;
-    color: #ff4d6d;
-    margin-bottom: 25px;
-}
+      update date {
+        display: block;
+        font-size: 12px;
+        color: gray;
+        margin-bottom: 5px;
+      }
 
-/* Custom tag styling */
-update {
-    display: block;
-    background: #ffe6eb;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 20px 0px 20px;
-    word-wrap: break-word;
-}
+      update p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      update img {
+        width: clamp(200px, 18vw, 400px);
+      }
 
-update date {
-    display: block;
-    font-size: 12px;
-    color: gray;
-    margin-bottom: 5px;
-}
+      /* Form styling */
+      form {
+        background: #fff0f2;
+        padding: 15px;
+        border-radius: 10px;
+        margin: 10px 0 0;
+      }
 
-update p {
-    font-size: 16px;
-    line-height: 1.5;
-}
-update img {
-    width:clamp(200px, 18vw, 400px);
-}
+      form input,
+      form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        resize: none;
+      }
 
-/* Form styling */
-form {
-    background: #fff0f2;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 10px 0 0;
-}
+      form button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        background-color: #ff4d6d;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
 
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 15px;
-    resize:none;
-}
+      form button:hover {
+        background-color: #ff1e4d;
+      }
 
-form button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    background-color: #ff4d6d;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #ff1e4d;
-}
-
-/* Responsive */
-@media screen and (max-width: 480px) {
-    h1 { font-size: 22px; }
-    update p { font-size: 14px; }
-}
-</style>
-</head>
-<body>
-
-<div class="container">
-    <h1>My Daily Updates 💌</h1>
-    <div class="textStorage">
-    <update>
-        <date>02/03/26, 9:30 AM</date>
-        <p>Hello, I'm just making my project probably I be done at 10:20 AM</p>
-        <a href="Update.png"><img src="Update.png"></a>
-    </update>    
-    <update>
-        <date>28/02/26, 4:15 PM</date>
-        <p>Hello, I'm still here playing, kinda bored.</p>
-    </update>   
-    <update>
-        <date>28/02/26, 10:30 AM</date>
-        <p>Hello, I'm just playing rn.</p>
-    </update>
+      /* Responsive */
+      @media screen and (max-width: 480px) {
+        h1 {
+          font-size: 22px;
+        }
+        update p {
+          font-size: 14px;
+        }
+      }
+      iframe, img, vid {
+        margin: 15px 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>My Daily Updates 💌</h1>
+      <div class="textStorage">
         <update>
-            <date>27/02/26, 7:50 PM</date>
-            <p>I just received your messaged, I will open my Instagram around 8:30PM okie, I'm just playing rn.</p>
+            <date>02/03/26, AM </date>
+            <p>If you want, I could delete the updates monthly so it wont stuck here, so every month or weekly, para you would not face difficulties on reading,
+                if you want only.
+                <br />
+                <br />
+                I can leave them all here naman and will remain.
+            </p>
         </update>
-    <update>
-        <date>27/02/26, 12:32 NN</date>
-        <p>I think I should eat na</p>
-    </update>
-    <update>
-        <date>27/02/26, 11:35 AM</date>
-        <p>When you're reading this, It's probably 2:00 PM, I'm currently modifying the designs, 
-           and I probably just git it so it's fast HAHAHAHA. 
-        </p>
-    </update>
-    <update>
-        <date>27/02/26, 7:05 AM</date>
-        <p>I might be late in class because I have to take shower, I'm currently typing this on terminal so it's efficient</p>
-    </update>
-    <update>
-        <date>27/02/26, 6:00 AM</date>
-        <p>Hello I just woke up rn</p>
-    </update>
-    <update>
-        <date>26/02/26, 20:44 PM</date>
-        <p>Hello, I'm quite bored rn I probably open my IG around 9:30PM because It's low battery</p>
-    </update>
-    </div>
-    <!-- Form for her reply -->
-    <form action="https://formspree.io/f/mkovybyw" method="POST">
-        <h2 style="color:#ff4d6d;margin-bottom:10px;"> Message 💌</h2>
-        <input type="text" name="name" placeholder="Your name" required>
-        <textarea name="message" rows="4" placeholder="Write your message here..." required></textarea>
+        <update>
+          <date>02/03/26, AM </date>
+          <p>
+            Hello, I'm currently just watching this issue in philippines, I was
+            watching this series of FLM or norman mangusin, if you're familiar
+            with him, they called him as pandemic hero of philippines, however
+            eventually his deception was exposed-- it was syndicate scam for
+            OFW, you might also see my comments AHAHAHAHA, well I'm just mad
+            kasi his pasakit to ofw which is sad.
+            <br />
+            <br />
+            Like literally since october everyday I watch the latest HAHAHAHA.
+            and after this, I finished it again, I hope this guy go to selda, ma donat sa oblo
+            <br />
+            <br />
+            btw it's lunch na, eat well, I'm done na.
+          </p>
+          <iframe
+            src="https://www.youtube.com/embed/TGYXkeKeKhc"
+            width="350"
+            title="description"
+            frameborder="0"
+            allow="features"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </update>
+        <update>
+          <date>02/03/26, 9:30 AM</date>
+          <p>
+            Hello, I'm just making my project probably I be done at 10:20 AM
+          </p>
+          <a href="Update.png"><img src="Update.png" /></a>
+        </update>
+        <update>
+          <date>28/02/26, 4:15 PM</date>
+          <p>Hello, I'm still here playing, kinda bored.</p>
+        </update>
+        <update>
+          <date>28/02/26, 10:30 AM</date>
+          <p>Hello, I'm just playing rn.</p>
+        </update>
+        <update>
+          <date>27/02/26, 7:50 PM</date>
+          <p>
+            I just received your messaged, I will open my Instagram around
+            8:30PM okie, I'm just playing rn.
+          </p>
+        </update>
+        <update>
+          <date>27/02/26, 12:32 NN</date>
+          <p>I think I should eat na</p>
+        </update>
+        <update>
+          <date>27/02/26, 11:35 AM</date>
+          <p>
+            When you're reading this, It's probably 2:00 PM, I'm currently
+            modifying the designs, and I probably just git it so it's fast
+            HAHAHAHA.
+          </p>
+        </update>
+        <update>
+          <date>27/02/26, 7:05 AM</date>
+          <p>
+            I might be late in class because I have to take shower, I'm
+            currently typing this on terminal so it's efficient
+          </p>
+        </update>
+        <update>
+          <date>27/02/26, 6:00 AM</date>
+          <p>Hello I just woke up rn</p>
+        </update>
+        <update>
+          <date>26/02/26, 20:44 PM</date>
+          <p>
+            Hello, I'm quite bored rn I probably open my IG around 9:30PM
+            because It's low battery
+          </p>
+        </update>
+      </div>
+      <!-- Form for her reply -->
+      <form action="https://formspree.io/f/mkovybyw" method="POST">
+        <h2 style="color: #ff4d6d; margin-bottom: 10px">Message 💌</h2>
+        <input type="text" name="name" placeholder="Your name" required />
+        <textarea
+          name="message"
+          rows="4"
+          placeholder="Write your message here..."
+          required
+        ></textarea>
         <button type="submit">Send ❤️</button>
-    </form>
-</div>
-
-</body>
+      </form>
+    </div>
+  </body>
 </html>
