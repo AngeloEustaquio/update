@@ -84,6 +84,9 @@ update p {
     font-size: 16px;
     line-height: 1.5;
 }
+update img {
+    width:clamp(200px, 18vw, 400px);
+}
 
 /* Form styling */
 form {
@@ -130,6 +133,11 @@ form button:hover {
 <div class="container">
     <h1>My Daily Updates 💌</h1>
     <div class="textStorage">
+    <update>
+        <date>02/03/26, 9:30 AM</date>
+        <p>Hello, I'm just making my project probably I be done at 10:20 AM</p>
+        <a href="Update.png"><img src="Update.png"></a>
+    </update>    
     <update>
         <date>28/02/26, 4:15 PM</date>
         <p>Hello, I'm still here playing, kinda bored.</p>
