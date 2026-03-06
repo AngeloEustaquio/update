@@ -127,9 +127,91 @@
           font-size: 14px;
         }
       }
-      iframe, img, vid {
+      iframe, vid {
         margin: 15px 0 0;
       }
+        .image-profile {
+            width:50px;
+            height:50px;
+            display:inline-block;
+            position:fixed;
+            bottom:0;
+            right:0;
+            margin:0rem 1.5rem 1.8rem;
+            border-radius:50%;
+        }
+        .img {
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            border:rgb(233, 144, 233);
+            cursor:pointer;
+        }
+        .message-box {
+            background-color:#ffe6eb;
+            width: 250px;
+            height:350px;
+            border-radius:15px;
+            border:solid 1.5px #FDE3FF;
+            position:fixed;
+            bottom:0;
+            right:0;
+            margin: 0rem 1.5rem 1.8rem;
+            display:none;
+            cursor: default;
+        }
+        .message-alignment {
+            background-color:#ffd3db;
+            font-family:sans-serif;
+            display:flex;
+            flex-direction:row;
+            justify-content: space-between;
+            row-gap: 10px;
+            align-items:center;
+            padding:5px;
+            border-radius:15px;
+        }
+        .img-profile {
+            width:40px;
+            border-radius:50%;
+
+        }
+        .message-name {
+            margin:0 0.5rem 0;
+            font-size:17px;
+        }
+        .remove-message {
+            width:40px;
+            text-align:center;
+            width:30px;
+            font-size:18px;
+            height:30px;
+            font-family:sans-serif;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            cursor:pointer;
+        }
+        text-box {
+          background-color:#ffdae2;
+          display:block;
+          padding:5px;
+          width:220px;
+          height:auto;
+          border-radius:5px;
+          margin:10px;
+          word-wrap: break-word;
+        }          
+        text-box date {
+        display: block;
+        font-size: 12px;
+        color: rgb(99, 97, 97);
+        margin-bottom: 5px;
+        }
+        text-box p {
+          font-size:14px;
+          line-height: 1.5;
+        }
     </style>
   </head>
   <body>
@@ -260,12 +342,37 @@
         <button type="submit">Send ❤️</button>
       </form>
     </div>
-  <!--
-      <script>
-      setTimeout(() => {
-        window.location.href = "error.html";
-      },4000);
-    </script>   
-  -->
+    <!--Todo: Chat-->
+    <div class="image-profile" id="open">
+        <img src="Bubu.jpeg" class="img">
+    </div>
+    <div class="message-box">
+        <section class="message-alignment">
+            <img class="img-profile" src="Bubu.jpeg" alt="Profile">
+            <div class="message-name">Angelo Eustaquio</div>
+            <div id="remove" class="remove-message">X</div>
+        </section>
+        <!--?: All Message is here-->
+        <text-box>
+            <date>05/03/26, 15:55 PM</date>
+            <p>My insta bruhhh, I cant still open it.</p>
+        </text-box>
+        <text-box>
+          <date>06/03/26, 16:10 PM</date>
+          <p>Ola, I be sending here replies, because the main part is for updates.</p>
+        </text-box>
+    </div>    
+    <script>
+        let boxOpen = document.getElementById('open');
+        let messageBox = document.querySelector('.message-box');
+        document.getElementById('remove').addEventListener('click', () => {
+            messageBox.style.display = 'none';
+            boxOpen.style.display = 'block';
+        });
+        document.getElementById('open').onclick = function(){
+            messageBox.style.display = 'block';
+            boxOpen.style.display = 'none';
+        };
+    </script>    
   </body>
 </html>
