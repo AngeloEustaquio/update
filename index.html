@@ -151,7 +151,7 @@
             background-color:#ffe6eb;
             width: 250px;
             height:350px;
-            border-radius:15px;
+            border-radius:10px;
             border:solid 1.5px #FDE3FF;
             position:fixed;
             bottom:0;
@@ -159,6 +159,10 @@
             margin: 0rem 1.5rem 1.8rem;
             display:none;
             cursor: default;
+        }
+        .storageMessage {
+          overflow-y:scroll;
+          height:300px;
         }
         .message-alignment {
             background-color:#ffd3db;
@@ -169,7 +173,7 @@
             row-gap: 10px;
             align-items:center;
             padding:5px;
-            border-radius:15px;
+            border-radius:10px;
         }
         .img-profile {
             width:40px;
@@ -199,7 +203,7 @@
           width:220px;
           height:auto;
           border-radius:5px;
-          margin:10px;
+          margin:10px 10px 20px;
           word-wrap: break-word;
         }          
         text-box date {
@@ -218,6 +222,10 @@
     <div class="container">
       <h1>My Daily Updates 💌</h1>
       <div class="textStorage">
+        <update>
+          <date>08/03/26, 13:14 PM</date>
+          <p>I'm goods naman, How about my baby? 😄</p>
+        </update>
         <update>
           <date>08/03/26, 9:15 AM</date>
           <p>Goodmorning baby, dang it's been 3 days no insta... bawi nalang ako sa call. labyu 😄❤️</p>
@@ -354,9 +362,15 @@
         </update>
       </div>
       <!-- Form for her reply -->
-      <form action="https://formspree.io/f/mkovybyw" method="POST">
+      <form action="https://formsubmit.co/angelob.eustaquio@gmail.com" method="POST" enctype="multipart/form-data">
         <h2 style="color: #ff4d6d; margin-bottom: 10px">Message 💌</h2>
+        <input type="hidden" name="_next" value="https://angeloeustaquio.github.io/update/">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
         <input type="text" name="name" placeholder="Your name" required />
+        <label>You can put imgs, vids, etc here:
+        <input type="file" name="file">
+        </label>
         <textarea
           name="message"
           rows="4"
@@ -377,6 +391,7 @@
             <div id="remove" class="remove-message">X</div>
         </section>
         <!--?: All Message is here-->
+        <div class="storageMessage">
         <text-box>
             <date>05/03/26, 15:55 PM</date>
             <p>My insta bruhhh, I cant still open it.</p>
@@ -385,6 +400,13 @@
           <date>06/03/26, 16:10 PM</date>
           <p>Ola, I be sending here replies, because the main part is for updates.</p>
         </text-box>
+        <text-box>
+          <date>08/03/26, 11:28 AM</date>
+          <p>I be saving here those importants things.</p>
+          <br />
+          <a href="https://angeloeustaquio.github.io/GeloBot/" alt="gelobot">GeloBot</a>
+        </text-box>
+        </div>
     </div>    
     <script>
         let boxOpen = document.getElementById('open');
