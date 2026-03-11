@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angelo's Daily Updates 💌</title>
+    <link rel="icon" type="image/x-icon" href="/assets/android-chrome-192x192.png" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-image: url(/assets/BackgroundImage.jpeg);
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .container {
+        max-width: 800px;
+        width: 100%;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; /* NEW ENTRIES AT BOTTOM */
+        background: rgba(255, 255, 255, 0.2);
+        border: white solid 1px;
+      }
+      .textStorage {
+        height: 680px;
+        overflow-y: auto;
+        width: clamp(420px, 90vw, auto);
+        padding: 0px 10px 0px;
+      }
+      /* Scrollbar width */
+      ::-webkit-scrollbar {
+        width: 2px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #ff4d6d;
+        border-radius: 10px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #ff4d6d;
+        margin-bottom: 25px;
+      }
+
+      /* Custom tag styling */
+      update {
+        display: block;
+        background: #ffe6eb;
+        padding: 15px;
+        border-radius: 10px;
+        margin: 20px 0px 20px;
+        word-wrap: break-word;
+      }
+
+      update date {
+        display: block;
+        font-size: 12px;
+        color: gray;
+        margin-bottom: 5px;
+      }
+
+      update p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      update img {
+        width: clamp(200px, 18vw, 400px);
+      }
+
+      /* Form styling */
+      form {
+        background: #fff0f2;
+        padding: 15px;
+        border-radius: 10px;
+        margin: 10px 0 0;
+      }
+
+      form input,
+      form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        resize: none;
+      }
+
+      form button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        background-color: #ff4d6d;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      form button:hover {
+        background-color: #ff1e4d;
+      }
+
+      /* Responsive */
+      @media screen and (max-width: 480px) {
+        h1 {
+          font-size: 22px;
+        }
+        update p {
+          font-size: 14px;
+        }
+      }
+      iframe,
+      vid {
+        margin: 15px 0 0;
+      }
+      .image-profile {
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin: 0rem 1.5rem 1.8rem;
+        border-radius: 50%;
+      }
+      .img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: rgb(233, 144, 233);
+        cursor: pointer;
+      }
+      .message-box {
+        background-color: #ffe6eb;
+        width: 250px;
+        height: 350px;
+        border-radius: 10px;
+        border: solid 1.5px #fde3ff;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin: 0rem 1.5rem 1.8rem;
+        display: none;
+        cursor: default;
+      }
+      .storageMessage {
+        overflow-y: scroll;
+        height: 300px;
+      }
+      .message-alignment {
+        background-color: #ffd3db;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        row-gap: 10px;
+        align-items: center;
+        padding: 5px;
+        border-radius: 10px;
+      }
+      .img-profile {
+        width: 40px;
+        border-radius: 50%;
+      }
+      .message-name {
+        margin: 0 0.5rem 0;
+        font-size: 17px;
+      }
+      .remove-message {
+        width: 40px;
+        text-align: center;
+        width: 30px;
+        font-size: 18px;
+        height: 30px;
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      text-box {
+        background-color: #ffdae2;
+        display: block;
+        padding: 5px;
+        width: 220px;
+        height: auto;
+        border-radius: 5px;
+        margin: 10px 10px 20px;
+        word-wrap: break-word;
+      }
+      text-box date {
+        display: block;
+        font-size: 12px;
+        color: rgb(99, 97, 97);
+        margin-bottom: 5px;
+      }
+      text-box p {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>My Daily Updates 💌</h1>
+      <div class="textStorage">
+        <update>
+          <date>11/03/26, 10:45 PM</date>
+          <p>
+            Murnings my baby😄.
+          </p>
+        </update>
+        <update>
+          <date>10/03/26, 21:00 PM</date>
+          <p>Sorry for mark and my bro, you guys getting killed</p>
+          <p>Im playing with reymund and mark then she joined...</p>
+        </update>
+        <update>
+          <date>10/03/26, 15:17 PM</date>
+          <p>It had before, I just removed it because the brave doens't accept 3rd party files</p>
+        </update>
+        <update>
+          <date>10/03/26, 10:30 AM</date>
+          <p>Murning</p>
+        </update>
+      </div>
+      <!-- Form for her reply -->
+      <form
+        action="https://formspree.io/f/meerodqe"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <h2 style="color: #ff4d6d; margin-bottom: 10px">Message 💌</h2>
+        <input type="text" name="name" placeholder="Your name" required />
+        <textarea
+          name="message"
+          rows="4"
+          placeholder="Write your message here..."
+          required
+        ></textarea>
+        <button type="submit">Send ❤️</button>
+      </form>
+    </div>
+    <!--Todo: Chat-->
+    <div class="image-profile" id="open">
+      <img src="/assets/Bubu.jpeg" draggable="false" class="img" alt="Bubu/Dudu"/>
+    </div>
+    <div class="message-box">
+      <section class="message-alignment">
+        <img class="img-profile" src="/assets/Bubu.jpeg" draggable="false" alt="Profile" />
+        <div class="message-name">Angelo Eustaquio</div>
+        <div id="remove" class="remove-message">X</div>
+      </section>
+      <!--?: All Message is here-->
+      <div class="storageMessage">
+        <text-box>
+          <date>05/03/26, 15:55 PM</date>
+          <p>My insta bruhhh, I cant still open it.</p>
+        </text-box>
+        <text-box>
+          <date>06/03/26, 16:10 PM</date>
+          <p>
+            Ola, I be sending here replies, because the main part is for
+            updates.
+          </p>
+        </text-box>
+        <text-box>
+          <date>08/03/26, 11:28 AM</date>
+          <p>I be saving here those importants things.</p>
+          <br />
+          <a href="https://angeloeustaquio.github.io/GeloBot/" alt="gelobot"
+            >GeloBot</a
+          >
+        </text-box>
+      </div>
+    </div>
+    <script>
+      let boxOpen = document.getElementById("open");
+      let messageBox = document.querySelector(".message-box");
+      document.getElementById("remove").addEventListener("click", () => {
+        messageBox.style.display = "none";
+        boxOpen.style.display = "block";
+      });
+      document.getElementById("open").onclick = function () {
+        messageBox.style.display = "block";
+        boxOpen.style.display = "none";
+      };
+    </script>
+  </body>
+</html>
