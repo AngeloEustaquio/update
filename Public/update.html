@@ -362,14 +362,9 @@
       <!--?: All Message is here-->
       <div class="storageMessage">
         <text-box>
-          <date>05/03/26, 15:55 PM</date>
-          <p>My insta bruhhh, I cant still open it.</p>
-        </text-box>
-        <text-box>
-          <date>06/03/26, 16:10 PM</date>
+          <date>15/03/26, 04:15 AM</date>
           <p>
-            Ola, I be sending here replies, because the main part is for
-            updates.
+            <a href="" id="link">Birthday Gift</a>
           </p>
         </text-box>
         <text-box>
@@ -393,6 +388,25 @@
         messageBox.style.display = "block";
         boxOpen.style.display = "none";
       };
+
+      const link = document.getElementById("link");
+      const birthday_date = new Date("2026-05-14");
+
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const today = new Date();
+
+        if ( today >= birthday_date )
+      {
+        link.href = "";
+        window.open(link.href, "_blank" );
+      }
+      else {
+        link.innerHTML = "The gift will open at exact May 14, 2026";
+        alert("The gift will open at exact May 14, 2026")
+      }
+      })
     </script>
   </body>
 </html>
