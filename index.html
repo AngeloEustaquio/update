@@ -1,127 +1,175 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon" href="assets/android-chrome-192x192.png" />
-<title>Private Login</title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angelo's Daily Updates 💌</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/android-chrome-192x192.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="Public/style.css"     
+    />
+    <script src="Public/script.js"></script>
+  </head>
+  <body>
+    <!-- ─── LOGIN PAGE ─── -->
+    <div id="loginPage">
+      <div class="login-box">
+        <h2>Tiffany Login ❤️</h2>
+        <input
+          type="text"
+          id="loginName"
+          placeholder="Your name"
+          onkeydown="if (event.key === 'Enter') login();"
+        />
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter password"
+          onkeydown="if (event.key === 'Enter') login();"
+        />
+        <br />
+        <button onclick="login()">Login</button>
+        <p id="loginError"></p>
+      </div>
+    </div>
 
-<style>
+    <!-- Hidden notify form -->
+    <form
+      id="notifyForm"
+      action="https://formsubmit.co/eustaquioasiong@gmail.com"
+      method="POST"
+      target="hiddenFrame"
+      style="display: none"
+    >
+      <input type="hidden" name="_captcha" value="false" />
+    </form>
+    <iframe name="hiddenFrame" style="display: none"></iframe>
 
-body{
-    margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-family:Arial;
-    background-image:url(assets/Cosmos.jpeg);
-    background-repeat:no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-h2 {
-    color:white;
-}
-.container{
-    background:rgb(255, 255, 255, 0.1);
-    padding:30px;
-    border-radius:15px;
-    text-align:center;
-    width:300px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
-    backdrop-filter: blur(2px);  
-}
+    <!-- ─── UPDATES PAGE ─── -->
+    <div id="updatesPage">
+      <div class="overlay" id="overlay"></div>
+      <div class="container">
+        <h1>My Daily Updates 💌</h1>
+        <div class="textStorage">
+          <update>
+            <date>16/03/26, 20:50 PM</date>
+            <p>
+              Also I already coded the images bruh so now you can click them
+            </p>
+            <br />
+            <img
+              src="assets/Screenshot from 2026-03-16 22-46-36.png"
+              alt="img"
+            />
+          </update>
+          <update>
+            <date>16/03/26, 20:30 PM</date>
+            <p>
+              Hello my <span>love</span>, I've been busy coding and playing...
+              <br /><br />
+              In the morning I made my project, it's about bullying btw, and I
+              finished it around 11:00 AM; then ate lunch.
+              <br /><br />
+              In the afternoon naman, I left early because I had to finish
+              something but it turns out, it was already done, so I just slept
+              until 18:05 PM then after if-tar; my mom fried a chicken and I
+              just ate after that.
+              <br /><br />
+              In the evening naman, I'm just playing rn, and watching MakaGago.
+            </p>
+            <br />
+            <img
+              src="assets/gif/Cosytales Love Sticker – Cosytales Love Chubby – discover and share GIFs.gif"
+              alt="img"
+            />
+            <br /><br />
+            <p>
+              That was all in my day, a few more weeks my works will come
+              especially School Break... 5 - 8 Prototypes in a Week as usual for
+              the past 2 years HAHAHAHA so I be more active here because this is
+              connected to my git so I can easily update you much more
+              effectively.
+              <br /><br />
+              <span>I love youuuu😇❤️</span>
+            </p>
+          </update>
+          <update>
+            <date>16/03/26, 9:35 AM</date>
+            <p>
+              Ola, Murnings I'm just doing my projects I might be done at 10:30
+              AM
+            </p>
+            <br />
+            <img
+              src="assets/Screenshot from 2026-03-16 09-31-23.png"
+              alt="img"
+              title="Aray Mo Pakak"
+            />
+          </update>
+        </div>
 
-input{
-    width:90%;
-    padding:10px;
-    margin:10px 0;
-    background:transparent;
-    outline:none;
-    font-size:17px;
-    border:none;
-    border-bottom:2px white solid;
-    color:white;
-}
-input::placeholder {
-    color: #ffffff;
-}
+        <!-- Message form -->
+        <form
+          action="https://formspree.io/f/meerodqe"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <h2 style="color: #ff4d6d; margin-bottom: 10px">Message 💌</h2>
+          <input type="text" name="name" placeholder="Your name" required />
+          <textarea
+            name="message"
+            rows="4"
+            placeholder="Write your message here..."
+            required
+          ></textarea>
+          <button type="submit">Send ❤️</button>
+        </form>
+      </div>
 
-button{
-    padding:10px 20px;
-    border:none;
-    border-radius:8px;
-    background:#ff4d6d;
-    color:white;
-    cursor:pointer;
-}
-
-#error{
-    color:rgb(0, 0, 0);
-}
-
-</style>
-</head>
-<body>
-<div class="container">
-<h2>Tiffany Login ❤️</h2>
-<input type="password" id="password" placeholder="Enter password">
-<br>
-<button onclick="login()">Login</button>
-<p id="error"></p>
-</div>
-<!-- Hidden FormSubmit form -->
-<form id="notifyForm"
-action="https://formsubmit.co/eustaquioasiong@gmail.com"
-method="POST"
-target="hiddenFrame"
-style="display:none">
-
-<input type="hidden" name="message" value="Your girlfriend logged in to the site ❤️">
-<input type="hidden" name="_captcha" value="false">
-
-</form>
-<iframe name="hiddenFrame" style="display:none;"></iframe>
-<script>
-function login() {
-    let password = document.getElementById("password").value;
-    let num_pass = Number(password);
-
-    if(num_pass === 1229) {
-
-        // Get current date and time
-        let now = new Date();
-        let datetime = now.toLocaleString(); 
-
-        // Add the time to the form
-        let notifyForm = document.getElementById("notifyForm");
-
-        // Check if input already exists
-        let timeInput = document.getElementById("loginTime");
-        if(!timeInput){
-            timeInput = document.createElement("input");
-            timeInput.type = "hidden";
-            timeInput.name = "message"; // FormSubmit reads this
-            timeInput.id = "loginTime";
-            notifyForm.appendChild(timeInput);
-        }
-        timeInput.value = "Your girlfriend logged in ❤️ at " + datetime;
-
-        // Submit the form
-        notifyForm.submit();
-
-        // Show loading and redirect
-        document.getElementById("error").textContent = "Loading...";
-        setTimeout(function(){
-            window.location.href = "Public/update.html";
-        }, 1500);
-    }
-    else {
-        document.getElementById("error").textContent = "Wrong password!";
-    }
-}
-</script>
-
-</body>
+      <!-- Chat bubble -->
+      <div class="image-profile" id="open">
+        <img
+          src="assets/Bubu.jpeg"
+          draggable="false"
+          class="img"
+          alt="Bubu/Dudu"
+        />
+      </div>
+      <div class="message-box">
+        <section class="message-alignment">
+          <img
+            class="img-profile"
+            src="assets/Bubu.jpeg"
+            draggable="false"
+            alt="Profile"
+          />
+          <div class="message-name">Angelo Eustaquio</div>
+          <div id="remove" class="remove-message">X</div>
+        </section>
+        <div class="storageMessage">
+          <text-box>
+            <date>15/03/26, 04:15 AM</date>
+            <p><a href="" id="link">Birthday Gift</a></p>
+          </text-box>
+          <text-box>
+            <date>08/03/26, 11:28 AM</date>
+            <p>I be saving here those importants things.</p>
+            <br />
+            <a href="https://angeloeustaquio.github.io/GeloBot/" alt="gelobot"
+              >GeloBot</a
+            >
+          </text-box>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
