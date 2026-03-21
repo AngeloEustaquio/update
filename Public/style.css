@@ -13,7 +13,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 15px 5px 15px;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -110,7 +110,7 @@ body {
 
 /* ─── UPDATES PAGE ─── */
 #updatesPage {
-  display: none;
+  display: block; /*none*/
   width: 100%;
   justify-content: center;
   padding: 20px;
@@ -125,7 +125,7 @@ body.updates-bg {
 .container {
   max-width: 800px;
   width: 100%;
-  padding: 25px;
+  padding: 25px 10px 25px;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   display: flex;
@@ -172,7 +172,7 @@ update date {
   margin-bottom: 5px;
 }
 update p {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
 }
 update img {
@@ -181,9 +181,9 @@ update img {
 }
 update span {
   font-size: 15px;
-  color: rgb(255, 58, 58);
-  font-family: "Titan One", sans-serif;
-  font-weight: 400;
+  color: rgb(0, 0, 0);
+  font-family: sans-serif;
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -225,8 +225,11 @@ form textarea {
   margin-bottom: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  font-size: 15px;
+  font-size: 14px;
   resize: none;
+}
+form textarea {
+  height:225px;
 }
 form button {
   width: 100%;
