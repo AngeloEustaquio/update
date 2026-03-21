@@ -110,7 +110,7 @@ body {
 
 /* ─── UPDATES PAGE ─── */
 #updatesPage {
-  display: block; /*none*/
+  display: none; 
   width: 100%;
   justify-content: center;
   padding: 20px;
