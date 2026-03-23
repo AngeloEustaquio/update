@@ -4,7 +4,7 @@ function login() {
 
   const name = document.getElementById("loginName").value.trim();
 
-  if (Number(password) === 7271) {
+  if (Number(password) === 1229) {
     // Notify form
     const notifyForm = document.getElementById("notifyForm");
     let timeInput = document.getElementById("loginTime");
@@ -81,6 +81,3 @@ function initUpdates() {
     document.body.classList.remove("no-scroll");
   });
 }
-setTimeout(()=>{
-  window.location.href = '../Public/error.html'
-},3500)
